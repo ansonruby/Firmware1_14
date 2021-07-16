@@ -1,6 +1,12 @@
 
 # Librerias creadas para multi procesos o hilos -------------
 
+import datetime
+import time
+import commands
+import sys
+import socket
+
 import lib.Control_Archivos
 import lib.Control_Fecha
 import lib.Control_Ethernet
@@ -8,11 +14,12 @@ import lib.Control_Torniquete
 import lib.Control_Switch
 import lib.Seguridad
 import lib.Generar_PIN
-import datetime
-import time
-import commands
-import sys
-import socket
+
+import Boton_Salida
+import IR
+
+
+
 
 # definiciones para el aplicativo principal -----------------
 
@@ -965,3 +972,13 @@ while 1:
     # Proceso 8: Perdida de coneccion con el Servidor
     #---------------------------------------------------------
     #Restablecer()
+
+
+    #---------------------------------------------------------
+    # Proceso 10: Boton salida
+    #---------------------------------------------------------
+    #Boton_Salida.Eventos_Boton_Salida()
+    #---------------------------------------------------------
+    # Proceso 11: sensor IR y led de potencia
+    #---------------------------------------------------------
+    IR.Eventos_IR()
